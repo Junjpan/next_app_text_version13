@@ -12,7 +12,7 @@ return repos ;
 }
 const ReposPage = async() => {
     const repos=await fetchRepos();
-    console.log(repos)
+
   return (
     <div className='repos-container'>
     <h2>Repositories</h2>
