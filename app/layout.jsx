@@ -1,5 +1,6 @@
 import './globals.css'
 import { Poppins } from 'next/font/google'
+import Header from './components/Header'
 
 //set up google font,use poppins.className to apply the poppins font to the body
 const poppins=Poppins(
@@ -17,7 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}><main className='container'>{children}</main></body>
+      <body className={poppins.className}>
+        <Header />
+        <main className='container'>{children}</main>
+        </body>
     </html>
   )
 }
