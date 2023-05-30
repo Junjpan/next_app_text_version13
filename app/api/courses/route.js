@@ -12,6 +12,6 @@ import courses from './data.json';
   }
 }
  */
-export async function GET(req,res){
+export async function GET(request){
     return NextResponse.json(courses)
 }
