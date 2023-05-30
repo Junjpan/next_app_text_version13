@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Courses from './components/Courses';
 
 const HomePage = () => {
   return (
-    <div>page</div>
+   <>
+   <h1>Welcome to Course Directory</h1>
+   <Courses />
+   </>
   )
 }
 
