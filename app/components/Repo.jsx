@@ -2,7 +2,11 @@ import Link from "next/link";
 import {FaStar,FaCodeBranch,FaEye} from "react-icons/fa";
 
 const fetchRepo=async(name)=>{
-const response=await fetch(`https://api.github.com/repos/Junjpan/${name}`);
+const response=await fetch(`https://api.github.com/repos/Junjpan/${name}`,{
+    next:{
+        revalidate:60
+    }
+});
 
 const repo=await response.json();
 

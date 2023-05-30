@@ -3,7 +3,13 @@ import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa';
 
 
 const fetchRepos=async()=>{
-    const response=await fetch('https://api.github.com/users/Junjpan/repos');
+    //It means wait for 60 seconds to fetch fresh data again,it's good for use when data is chaing all the time.
+    //if the data doesn't change often, you don't even need the revalidate method
+    const response=await fetch('https://api.github.com/users/Junjpan/repos',{
+        next:{
+            revalidate:60
+        }
+    });
 
     //wait for 1 sec, so that we can see the loading componnt
     await new Promise((resolve)=>setTimeout(resolve,1000));

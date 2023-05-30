@@ -1,15 +1,16 @@
 import Link from "next/link";
 
 const fetchRepoContents = async (name) => {
+    //use it for testing suspending page
   await new Promise((resolve) => setTimeout(resolve, 3000));
 
   const response = await fetch(
-    `https://api.github.com/repos/Junjpan/${name}/contents`
-    // {
-    //   next: {
-    //     revalidate: 60,
-    //   },
-    // }
+    `https://api.github.com/repos/Junjpan/${name}/contents`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
   );
   const contents = await response.json();
   return contents;
